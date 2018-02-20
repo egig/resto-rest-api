@@ -6,6 +6,7 @@ import (
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"
+	"strconv"
 )
 
 type App struct {
@@ -32,7 +33,9 @@ func (a *App) Run(port string) {
 }
 
 func GetRestaurants(w http.ResponseWriter, r *http.Request) {
-	var restaurants = repository.GetRestaurants()
+	latitude, _ := strconv.ParseFloat(r.FormValue("latitude"), 32)
+	longitude, _ := strconv.ParseFloat(r.FormValue("longitude"), 32)
+	var restaurants = repository.GetRestaurants(latitude, longitude)
 	json.NewEncoder(w).Encode(restaurants)
 }
 

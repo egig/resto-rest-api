@@ -1,0 +1,6 @@
+{
+  "MySQLHost": "localhost",
+  "MySQLPort": "3306",
+  "MySQLUser": "root",
+  "MySQLPassword": "pw"
+}

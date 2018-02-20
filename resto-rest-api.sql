@@ -1,32 +1,52 @@
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (12645, 'Polo Lounge', -6.2106388889, 106.8162222222, 'Tanah Abang', 'Western', 9.3333, 0.09823693439760602);
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (38184, 'Martabak Orins', -6.20955, 106.8155833333, 'Tanah Abang', 'Desserts', 8.6, 0.09975902116389539);
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (38861, 'Oto Bento', -6.2106722222, 106.8167416667, 'Tanah Abang', 'Japanese', 8.8, 0.1035470832107894);
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (38191, 'Skywalker Coffee', -6.2107111111, 106.8166666667, 'Tanah Abang', 'Coffee & Tea', 8.6829, 0.10551971889165075);
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (12792, 'President Lounge', -6.2108, 106.8161694444, 'Tanah Abang', 'Western', 10, 0.11705718575933771);
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (38803, 'Starbucks Coffee', -6.2108, 106.815985, 'Tanah Abang', 'Coffee & Tea', 9.2, 0.12409989937418793);
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (47106, 'Waroeng Boenartie', -6.211001, 106.816228, 'Sudirman', 'Indonesian', 8.6, 0.13739227083328248);
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (36606, 'Orenji Japanese Kitchen', -6.21106, 106.816326, 'Tanah Abang', 'Japanese', 8, 0.14236721515191447);
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (58246, 'Bakso Benhil', -6.211078, 106.816369, 'Tanah Abang', 'Indonesian', 0, 0.14397081137255688);
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (3098, 'Tjap Toean', -6.2089222222, 106.8180305556, 'Sudirman', 'Malaysian', 8, 0.19899113317056108);
+CREATE TABLE `restaurants` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `latitude` double NOT NULL,
+  `longitude` double NOT NULL,
+  `district_name` varchar(255) DEFAULT NULL,
+  `cuisine_name` varchar(255) DEFAULT NULL,
+  `rating` double DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=58247 DEFAULT CHARSET=latin1;
 
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (56400, 'Aroma Batavia Cafe & Resto', -6.176567, 106.841263, 'Senen', 'Indonesian', 0, 0.011007992401187557);
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (36189, 'Waroeng Ikan Bakar Khas Papua', -6.176623, 106.841222, 'Senen', 'Indonesian', 0, 0.015157275843640327);
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (36190, 'Es Pisang Ijo', -6.176623, 106.841222, 'Senen', 'Desserts', 0, 0.015157275843640327);
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (36192, 'Makanan Khas Malang', -6.176623, 106.841222, 'Senen', 'Jawa', 0, 0.015157275843640327);
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (36193, 'Nasi Goreng Semarang', -6.176623, 106.841222, 'Senen', 'Indonesian', 0, 0.015157275843640327);
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (36194, 'Pindang Palembang Pondok Irmanti Sekayu', -6.176623, 106.841222, 'Senen', 'Palembang', 0, 0.015157275843640327);
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (36195, 'Gado - Gado Boplo', -6.176623, 106.841222, 'Senen', 'Betawi', 0, 0.015157275843640327);
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (31350, 'Kue Cubit Cimot', -6.176651, 106.841219, 'Senen', 'Desserts', 0, 0.01821100544461837);
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (30989, 'Sushi Saki', -6.176652, 106.841219, 'Senen', 'Japanese', 0, 0.018321528695561345);
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (30805, 'Steak 21', -6.176652, 106.841221, 'Senen', 'American', 0, 0.01834414301993607);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating)VALUES (12645, 'Polo Lounge', -6.2106388889, 106.8162222222, 'Tanah Abang', 'Western', 9.3333);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (38184, 'Martabak Orins', -6.20955, 106.8155833333, 'Tanah Abang', 'Desserts', 8.6);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (38861, 'Oto Bento', -6.2106722222, 106.8167416667, 'Tanah Abang', 'Japanese', 8.);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (38191, 'Skywalker Coffee', -6.2107111111, 106.8166666667, 'Tanah Abang', 'Coffee & Tea', 8.6829);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (12792, 'President Lounge', -6.2108, 106.8161694444, 'Tanah Abang', 'Western', 10);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (38803, 'Starbucks Coffee', -6.2108, 106.815985, 'Tanah Abang', 'Coffee & Tea', 9.2);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (47106, 'Waroeng Boenartie', -6.211001, 106.816228, 'Sudirman', 'Indonesian', 8.6);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (36606, 'Orenji Japanese Kitchen', -6.21106, 106.816326, 'Tanah Abang', 'Japanese', 8);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (58246, 'Bakso Benhil', -6.211078, 106.816369, 'Tanah Abang', 'Indonesian', 0);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (3098, 'Tjap Toean', -6.2089222222, 106.8180305556, 'Sudirman', 'Malaysian', 8);
 
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (10141, 'Gandasari', -6.194768, 106.81731, 'Thamrin', 'Sunda', 0, 0.020903450552500796);
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (13003, 'Resto Ardhani', -6.194768, 106.81731, 'Thamrin', 'Indonesian', 0, 0.020903450552500796);
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (13006, 'Resto Blueberry', -6.194768, 106.81731, 'Thamrin', 'Jawa', 0, 0.020903450552500796);
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (13176, 'RM Maharani', -6.194768, 106.81731, 'Thamrin', 'Jawa', 0, 0.020903450552500796);
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (13699, 'Sedap Murah', -6.194768, 106.81731, 'Thamrin', 'Jawa', 0, 0.020903450552500796);
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (14102, 'Soto Betawi Ibu Annie', -6.194768, 106.81731, 'Thamrin', 'Betawi', 0, 0.020903450552500796);
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (14142, 'Soto Kudus', -6.194768, 106.81731, 'Thamrin', 'Jawa', 0, 0.020903450552500796);
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (24271, 'Burger King', -6.194768, 106.81731, 'Thamrin', 'Fast Food', 0, 0.020903450552500796);
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (26444, 'Bakmi GM', -6.194768, 106.81731, 'Thamrin', 'Chinese', 0, 0.020903450552500796);
-INSERT INTO MY_TABLE(id, name, latitude, longitude, district_name, cuisine_name, rating, distance) VALUES (28387, 'Kopi Oey', -6.194768, 106.81731, 'Thamrin', 'Coffee & Tea', 6, 0.020903450552500796);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (56400, 'Aroma Batavia Cafe & Resto', -6.176567, 106.841263, 'Senen', 'Indonesian', 0);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (36189, 'Waroeng Ikan Bakar Khas Papua', -6.176623, 106.841222, 'Senen', 'Indonesian', 0);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (36190, 'Es Pisang Ijo', -6.176623, 106.841222, 'Senen', 'Desserts', 0);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (36192, 'Makanan Khas Malang', -6.176623, 106.841222, 'Senen', 'Jawa', 0);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (36193, 'Nasi Goreng Semarang', -6.176623, 106.841222, 'Senen', 'Indonesian', 0);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (36194, 'Pindang Palembang Pondok Irmanti Sekayu', -6.176623, 106.841222, 'Senen', 'Palembang', 0);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (36195, 'Gado - Gado Boplo', -6.176623, 106.841222, 'Senen', 'Betawi', 0);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (31350, 'Kue Cubit Cimot', -6.176651, 106.841219, 'Senen', 'Desserts', 0);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (30989, 'Sushi Saki', -6.176652, 106.841219, 'Senen', 'Japanese', 0);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (30805, 'Steak 21', -6.176652, 106.841221, 'Senen', 'American', 0);
+
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (10141, 'Gandasari', -6.194768, 106.81731, 'Thamrin', 'Sunda', 0);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (13003, 'Resto Ardhani', -6.194768, 106.81731, 'Thamrin', 'Indonesian', 0);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (13006, 'Resto Blueberry', -6.194768, 106.81731, 'Thamrin', 'Jawa', 0);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (13176, 'RM Maharani', -6.194768, 106.81731, 'Thamrin', 'Jawa', 0);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (13699, 'Sedap Murah', -6.194768, 106.81731, 'Thamrin', 'Jawa', 0);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (14102, 'Soto Betawi Ibu Annie', -6.194768, 106.81731, 'Thamrin', 'Betawi', 0);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (14142, 'Soto Kudus', -6.194768, 106.81731, 'Thamrin', 'Jawa', 0);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (24271, 'Burger King', -6.194768, 106.81731, 'Thamrin', 'Fast Food', 0);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (26444, 'Bakmi GM', -6.194768, 106.81731, 'Thamrin', 'Chinese', 0);
+INSERT INTO restaurants(id, name, latitude, longitude, district_name, cuisine_name, rating) VALUES (28387, 'Kopi Oey', -6.194768, 106.81731, 'Thamrin', 'Coffee & Tea', 6);
+
+CREATE TABLE `reservations` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `reservation_time` datetime DEFAULT NULL,
+  `restaurant_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `restaurant_id` (`restaurant_id`),
+  CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurants` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

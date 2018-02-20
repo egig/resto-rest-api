@@ -1,13 +1,64 @@
 package repository
 
 import "../model"
+import "database/sql"
+import (
+	_ "github.com/go-sql-driver/mysql"
+	"log"
+)
 
-func GetRestaurants() []model.Restaurant {
+
+func GetRestaurants(latitude, longitude float64) []model.Restaurant {
+
+	db, err := sql.Open("mysql", "root:pw@/resto-rest-api");
+	query := `SELECT id,name,latitude,longitude,district_name,cuisine_name,rating,
+				(
+					6371 *
+					acos(
+						cos( radians( ? ) ) *
+						cos( radians( latitude ) ) *
+						cos(
+							radians(longitude ) - radians( ? )
+						) +
+						sin(radians(?)) *
+						sin(radians(latitude))
+					)
+				) as distance
+				FROM restaurants
+				HAVING
+					distance < ?
+				ORDER BY
+					distance ASC`
+
+	rows, err := db.Query(query, latitude, longitude, latitude, 5)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	var restaurants []model.Restaurant
 
-	restaurants = append(restaurants, model.Restaurant{ID: "1", Name: "Common Ground", Latitude: -6.211110, Longitude: 106.816363})
-	restaurants = append(restaurants, model.Restaurant{ID: "2", Name: "Common Ground 2", Latitude: -6.749354, Longitude: 106.837483})
-	restaurants = append(restaurants, model.Restaurant{ID: "3", Name: "Common Ground 3", Latitude: -6.545410, Longitude: 106.349433})
+	defer rows.Close()
+	for rows.Next() {
+		var r model.Restaurant
+		err := rows.Scan(
+			&r.ID,
+			&r.Name,
+			&r.Latitude,
+			&r.Longitude,
+			&r.DistrictName,
+			&r.CuisineName,
+			&r.Rating,
+			&r.Distance)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		restaurants = append(restaurants, r)
+	}
+	if err := rows.Err(); err != nil {
+		log.Fatal(err)
+	}
+
+
 	return restaurants
 }
