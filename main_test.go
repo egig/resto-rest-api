@@ -1,10 +1,10 @@
 package main_test
 
 import (
-	"testing"
+	"."
 	"net/http"
 	"net/http/httptest"
-	"."
+	"testing"
 )
 
 var a main.App

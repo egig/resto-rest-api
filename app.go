@@ -1,17 +1,16 @@
 package main
 
 import (
+	"./repository"
+	"encoding/json"
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"
-	"encoding/json"
-	"./repository"
 )
 
 type App struct {
 	Router *mux.Router
 }
-
 
 func (a *App) Initialize() {
 
@@ -20,6 +19,9 @@ func (a *App) Initialize() {
 	router.HandleFunc("/restaurants/{id}", GetRestaurant).Methods("GET")
 	router.HandleFunc("/restaurants/{id}", CreateRestaurant).Methods("POST")
 	router.HandleFunc("/restaurants/{id}", DeleteRestaurant).Methods("DELETE")
+
+	router.HandleFunc("/restaurants/{id}/reservations", GetReservations).Methods("GET")
+	router.HandleFunc("/restaurants/{id}/reservations", CreateReservation).Methods("POST")
 
 	a.Router = router
 }
@@ -30,10 +32,13 @@ func (a *App) Run(port string) {
 }
 
 func GetRestaurants(w http.ResponseWriter, r *http.Request) {
-	var restaurants = repository.GetRestaurants();
-	json.NewEncoder(w).Encode(restaurants);
+	var restaurants = repository.GetRestaurants()
+	json.NewEncoder(w).Encode(restaurants)
 }
 
-func GetRestaurant(w http.ResponseWriter, r *http.Request) {}
+func GetRestaurant(w http.ResponseWriter, r *http.Request)    {}
 func CreateRestaurant(w http.ResponseWriter, r *http.Request) {}
 func DeleteRestaurant(w http.ResponseWriter, r *http.Request) {}
+
+func GetReservations(w http.ResponseWriter, r *http.Request)   {}
+func CreateReservation(w http.ResponseWriter, r *http.Request) {}
