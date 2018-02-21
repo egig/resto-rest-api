@@ -31,9 +31,9 @@ then visit `http://localhost:8000/restaurants` thru your browser.
 
 available endpoints:
 
-GET   http://localhost:8000/restaurants
-GET    http://localhost:8000/restaurants/:restaurant_id/reservations
-POST http://localhost:8000/restaurants/:restaurant_id/reservations
+- GET   http://localhost:8000/restaurants
+- GET    http://localhost:8000/restaurants/:restaurant_id/reservations
+- POST http://localhost:8000/restaurants/:restaurant_id/reservations
 
 
 ## Test
