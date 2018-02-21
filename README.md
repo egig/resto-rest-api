@@ -11,7 +11,7 @@ go get
 ```
 3. Create MySQL Database
 4. Import file `resto-rest-api.sql`
-5. Edit file `config.json`, according to your system
+5. Create file `config.json`, and edit it according to your system, see `config.json.example`
 
 ## Run
 ```
