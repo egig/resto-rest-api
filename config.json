@@ -1,4 +1,0 @@
-{
-  "DBDriver": "mysql",
-  "DBDSN": "root:pw@/resto-rest-api"
-}
