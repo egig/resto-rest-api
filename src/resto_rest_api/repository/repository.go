@@ -1,6 +1,9 @@
 package repository
 
-import "../model"
+import (
+	"resto_rest_api/config"
+	"resto_rest_api/model"
+)
 import "database/sql"
 import (
 	_ "github.com/go-sql-driver/mysql"
@@ -10,7 +13,8 @@ import (
 
 func GetRestaurants(latitude, longitude float64) []model.Restaurant {
 
-	db, err := sql.Open("mysql", "root:pw@/resto-rest-api");
+	c := config.GetValue();
+	db, err := sql.Open(c.DBDriver, c.DBDSN);
 	query := `SELECT id,name,latitude,longitude,district_name,cuisine_name,rating,
 				(
 					6371 *

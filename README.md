@@ -6,7 +6,8 @@ git clone https://github.com/egig/resto-rest-api.git
 2. Install dependency
 ```
 cd resto-rest-api
-git get
+export GOPATH="$GOPATH:$PWD"
+go get
 ```
 3. Create MySQL Database
 4. Import file `resto-rest-api.sql`

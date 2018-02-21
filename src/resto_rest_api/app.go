@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./repository"
+	"resto_rest_api/repository"
 	"encoding/json"
 	"github.com/gorilla/mux"
 	"log"

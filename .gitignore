@@ -1,2 +1,5 @@
-/resto-rest-api
+/src/resto_rest_api/resto_rest_api
 /.idea
+/bin
+/pkg
+/config.json
