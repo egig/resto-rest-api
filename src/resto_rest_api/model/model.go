@@ -1,7 +1,5 @@
 package model
 
-import "time"
-
 type Restaurant struct {
 	ID        string  `json:"id,omitempty"`
 	Name      string  `json:"name,omitempty"`
@@ -15,6 +13,6 @@ type Restaurant struct {
 
 type Reservation struct {
 	ID              string      `json:"id,omitempty"`
-	ReservationTime time.Time   `json:"reservation_time,omitempty"`
+	ReservationTime string   `json:"reservation_time,omitempty"`
 	Restaurant      *Restaurant `json:"restaurant,omitempty"`
 }
